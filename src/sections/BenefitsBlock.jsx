@@ -103,7 +103,7 @@ export default function BenefitsBlock() {
           <div className="relative overflow-hidden rounded-[14px] bg-[#DFDFDF]">
             <video
               ref={videoRef}
-              className="aspect-[4/3] w-full translate-y-[7%] scale-105 object-contain p-3 sm:aspect-[16/10]"
+              className="aspect-[4/3] w-full scale-105 object-contain p-3 sm:aspect-[16/10] sm:translate-y-[7%]"
               src={VIDEO_URL}
               autoPlay
               loop
