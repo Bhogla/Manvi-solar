@@ -1,0 +1,105 @@
+/* Fonts (Space Grotesk + Inter) are loaded via a <link> in index.html for
+   faster, non-render-blocking delivery. Tokens: font-display / font-body. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #dfdfdf; /* base — every page shares the light-grey ground */
+  color: #1a1a1a; /* ink */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Liquid-glass system — tuned for the light #DFDFDF base. The inner-highlight
+   shadow is mandatory: it gives real depth instead of a flat translucent box. */
+.glass {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow:
+    inset 0px 4px 4px 0px rgba(255, 255, 255, 0.35),
+    0px 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Dark liquid-glass — for the nav + chips floating over the DARK hero. Same
+   inner-highlight language as .glass, inverted for a near-black green ground so
+   light text stays legible instead of washing out on a milky light panel. */
+.glass-dark {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  box-shadow:
+    inset 0px 1px 1px 0px rgba(255, 255, 255, 0.18),
+    0px 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Dark hero ground — deep near-black green gradient, premium and dramatic. */
+.hero-dark {
+  background:
+    radial-gradient(120% 90% at 78% 30%, rgba(47, 212, 107, 0.14) 0%, transparent 55%),
+    linear-gradient(160deg, #04170a 0%, #061f0d 100%);
+}
+
+/* Soft dark-to-#DFDFDF fade pinned to the hero's bottom edge, so the dramatic
+   dark hero dissolves into the light sections instead of hard-cutting. */
+.hero-fade {
+  background: linear-gradient(180deg, rgba(6, 31, 13, 0) 0%, #061f0d 22%, #0a2712 46%, #7d9b84 78%, #dfdfdf 100%);
+}
+
+/* Radial vignette that dissolves the hero video's flat grey backdrop into the
+   dark hero — the house reads as floating on a spotlit stage, no grey rectangle. */
+.hero-video-mask {
+  -webkit-mask-image: radial-gradient(ellipse 58% 56% at 50% 47%, #000 28%, rgba(0, 0, 0, 0.35) 58%, transparent 72%);
+  mask-image: radial-gradient(ellipse 58% 56% at 50% 47%, #000 28%, rgba(0, 0, 0, 0.35) 58%, transparent 72%);
+  mix-blend-mode: screen;
+}
+
+/* Liquid-glass surface — reads best over the hero video. */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.01);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.15) 20%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.15) 80%,
+    rgba(255, 255, 255, 0.45) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
