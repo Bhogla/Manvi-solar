@@ -18,8 +18,8 @@ export default function Services() {
         subtitle="From panels and inverters to pumps, street lights and full rooftop installs — one partner for every solar need across Uttarakhand and Uttar Pradesh."
       />
 
-      <section className="bg-white px-5 py-24 sm:px-8 md:px-12 md:py-32">
-        <div className="mx-auto max-w-7xl">
+      <section className="bg-white py-24 md:py-32">
+        <div className="mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, i) => {
               const Icon = service.icon

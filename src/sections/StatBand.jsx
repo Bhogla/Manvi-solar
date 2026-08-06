@@ -15,13 +15,13 @@ const stats = [
 
 export default function StatBand() {
   return (
-    <section className="relative overflow-hidden bg-base px-5 py-24 sm:px-8 md:px-12 md:py-28">
+    <section className="relative overflow-hidden bg-base py-24 md:py-28">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-20 top-1/2 h-[380px] w-[380px] -translate-y-1/2 rounded-full bg-brand-green/[0.12] blur-[130px]" />
         <div className="absolute -right-20 top-1/2 h-[380px] w-[380px] -translate-y-1/2 rounded-full bg-brand-yellow/[0.08] blur-[130px]" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

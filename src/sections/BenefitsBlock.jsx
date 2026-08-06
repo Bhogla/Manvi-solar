@@ -22,8 +22,8 @@ export default function BenefitsBlock() {
   }, [])
 
   return (
-    <section className="bg-[#F4F4F2] px-5 py-24 sm:px-8 md:px-12 md:py-32">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
+    <section className="bg-[#F4F4F2] py-24 md:py-32">
+      <div className="mx-auto grid max-w-[1500px] px-6 sm:px-8 lg:px-12 items-center gap-12 lg:grid-cols-2 lg:gap-16">
         {/* Left — copy, tags, stats */}
         <div>
           <motion.h2

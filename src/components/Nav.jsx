@@ -34,10 +34,19 @@ export default function Nav({ theme = 'light' }) {
 
   return (
     <>
-      <div className="sticky top-[30px] z-40 mt-[30px] px-5 sm:px-8 md:px-12">
-        <nav className="relative mx-auto flex max-w-[1600px] items-center justify-between">
+      <div className="sticky top-[30px] z-40 mt-[30px]">
+        {/* Same content grid as the hero and every page section
+            (mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12), so the logo's left
+            edge and the CTA's right edge line up exactly with the page content
+            below rather than floating in the raw viewport. 3-track grid:
+            logo | centered links | CTA. The center track is auto-width and
+            truly centered by the equal 1fr side tracks, so the link group can't
+            drift into the logo or CTA the way an absolute-centered element does
+            (Framer Motion resets the inline transform after its entrance, which
+            would wipe a -translate-x-1/2). */}
+        <nav className="mx-auto grid w-full max-w-[1500px] grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 sm:px-8 lg:px-12">
           {/* Left — logo (routes home) */}
-          <motion.div {...fadeDown(0)} className="shrink-0">
+          <motion.div {...fadeDown(0)} className="col-start-1 justify-self-start">
             <NavLink to="/" aria-label="Maanvi Solar Energy — home">
               {dark ? (
                 // The logo lockup has dark text — give it a light chip so it
@@ -51,10 +60,12 @@ export default function Nav({ theme = 'light' }) {
             </NavLink>
           </motion.div>
 
-          {/* Center — links in a single centered glass group (hidden on mobile) */}
+          {/* Center — links in a single centered glass group. Shown from lg up,
+              where there's room for logo + links + CTA without collision;
+              below lg the hamburger menu carries every link. */}
           <motion.div
             {...fadeDown(1)}
-            className={`${glassClass} absolute left-1/2 hidden w-fit -translate-x-1/2 items-center gap-1 px-2 py-2 md:flex`}
+            className={`${glassClass} col-start-2 hidden w-fit items-center gap-1 justify-self-center px-2 py-2 lg:flex`}
           >
             {navLinks.map((link) => (
               <NavLink
@@ -68,9 +79,9 @@ export default function Nav({ theme = 'light' }) {
             ))}
           </motion.div>
 
-          {/* Right — primary CTA (md+) + glass hamburger (mobile) */}
-          <div className="flex items-center gap-3">
-            <motion.div {...fadeDown(2)} className="hidden md:block">
+          {/* Right — primary CTA (lg+) + glass hamburger (below lg) */}
+          <div className="col-start-3 flex items-center gap-3 justify-self-end">
+            <motion.div {...fadeDown(2)} className="hidden lg:block">
               {dark ? (
                 // TEMP bridge: on a still-green interior hero the solid-green primary
                 // CTA would be green-on-green, so use a glass CTA until the page is
@@ -96,7 +107,7 @@ export default function Nav({ theme = 'light' }) {
               {...fadeDown(2)}
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
-              className={`${glassClass} flex h-11 w-11 flex-col items-center justify-center gap-1 transition-transform duration-200 hover:scale-[1.03] md:hidden`}
+              className={`${glassClass} flex h-11 w-11 flex-col items-center justify-center gap-1 transition-transform duration-200 hover:scale-[1.03] lg:hidden`}
             >
               <span className={`h-0.5 w-4 ${dark ? 'bg-white' : 'bg-ink'}`} />
               <span className={`h-0.5 w-4 ${dark ? 'bg-white' : 'bg-ink'}`} />

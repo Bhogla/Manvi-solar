@@ -29,8 +29,8 @@ const steps = [
 // on desktop (with a connecting line + arrows), stacked on mobile.
 export default function HowItWorks() {
   return (
-    <section className="relative overflow-hidden bg-white px-5 py-24 sm:px-8 md:px-12 md:py-32">
-      <div className="relative mx-auto max-w-7xl">
+    <section className="relative overflow-hidden bg-white py-24 md:py-32">
+      <div className="relative mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12">
         <div className="max-w-2xl">
           <Kicker>How It Works</Kicker>
           <h2

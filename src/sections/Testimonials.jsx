@@ -8,8 +8,8 @@ const EASE = [0.22, 1, 0.36, 1]
 // Home testimonials — 3 entries from data/testimonials.js, on the glass system.
 export default function Testimonials() {
   return (
-    <section className="relative overflow-hidden bg-white px-5 py-24 sm:px-8 md:px-12 md:py-32">
-      <div className="relative mx-auto max-w-7xl">
+    <section className="relative overflow-hidden bg-white py-24 md:py-32">
+      <div className="relative mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col items-center text-center">
           <Kicker center>Client Voices</Kicker>
           <h2

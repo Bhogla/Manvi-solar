@@ -65,8 +65,8 @@ export default function Contact() {
         subtitle="Questions about sizing, savings or a site visit? Reach out — we usually reply the same day."
       />
 
-      <section className="bg-white px-5 py-24 sm:px-8 md:px-12 md:py-32">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+      <section className="bg-white py-24 md:py-32">
+        <div className="mx-auto grid max-w-[1500px] px-6 sm:px-8 lg:px-12 grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Details */}
           <motion.div {...reveal()}>
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-brand-green">
@@ -166,8 +166,8 @@ export default function Contact() {
       </section>
 
       {/* Map embed */}
-      <section className="bg-neutral-50 px-5 pb-24 sm:px-8 md:px-12 md:pb-32">
-        <div className="mx-auto max-w-7xl">
+      <section className="bg-neutral-50 pb-24 md:pb-32">
+        <div className="mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12">
           <div className="overflow-hidden rounded-3xl border border-black/10">
             <iframe
               title="Maanvi Solar Energy location"

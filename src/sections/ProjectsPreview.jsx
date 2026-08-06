@@ -12,13 +12,13 @@ export default function ProjectsPreview() {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden bg-base px-5 py-24 sm:px-8 md:px-12 md:py-32"
+      className="relative overflow-hidden bg-base py-24 md:py-32"
     >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -right-24 top-16 h-[420px] w-[420px] rounded-full bg-brand-blue/[0.10] blur-[140px]" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <Kicker>Recent Work</Kicker>

@@ -20,8 +20,8 @@ export default function PageHeader({ eyebrow, title, subtitle }) {
             Flip to the default light variant when this page is refactored. */}
         <Nav theme="dark" />
 
-        <div className="px-5 pb-20 pt-16 sm:px-8 md:px-12 md:pb-28 md:pt-24">
-          <div className="mx-auto max-w-7xl">
+        <div className="pb-20 pt-16 md:pb-28 md:pt-24">
+          <div className="mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12">
             {eyebrow && (
               <motion.p
                 initial={{ opacity: 0, y: 16 }}

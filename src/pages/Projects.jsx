@@ -22,8 +22,8 @@ export default function Projects() {
         subtitle="A look at residential, commercial and industrial installs delivered across Uttarakhand and Uttar Pradesh."
       />
 
-      <section className="bg-white px-5 py-24 sm:px-8 md:px-12 md:py-32">
-        <div className="mx-auto max-w-7xl">
+      <section className="bg-white py-24 md:py-32">
+        <div className="mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12">
           {/* Filter pills */}
           <div className="flex flex-wrap gap-3">
             {filters.map((f) => (

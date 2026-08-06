@@ -30,12 +30,12 @@ const reasons = [
 // numerals, glass cards with a hover lift, one clean left alignment axis.
 export default function WhyChoose() {
   return (
-    <section className="relative overflow-hidden bg-base px-5 py-24 sm:px-8 md:px-12 md:py-32">
+    <section className="relative overflow-hidden bg-base py-24 md:py-32">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-0 h-[420px] w-[520px] -translate-x-1/2 rounded-full bg-brand-green/[0.10] blur-[140px]" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl">
+      <div className="relative mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.4fr)] lg:gap-16">
           {/* Heading rail */}
           <motion.div

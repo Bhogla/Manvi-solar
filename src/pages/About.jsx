@@ -61,8 +61,8 @@ export default function About() {
       />
 
       {/* Company story */}
-      <section className="bg-white px-5 py-24 sm:px-8 md:px-12 md:py-32">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
+      <section className="bg-white py-24 md:py-32">
+        <div className="mx-auto grid max-w-[1500px] px-6 sm:px-8 lg:px-12 grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
           <motion.div {...reveal()}>
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-brand-green">
               Our Story
@@ -99,8 +99,8 @@ export default function About() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="bg-neutral-50 px-5 py-24 sm:px-8 md:px-12 md:py-32">
-        <div className="mx-auto max-w-7xl">
+      <section className="bg-neutral-50 py-24 md:py-32">
+        <div className="mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <motion.div
               {...reveal()}
@@ -161,8 +161,8 @@ export default function About() {
       </section>
 
       {/* Coverage */}
-      <section className="bg-white px-5 py-24 sm:px-8 md:px-12 md:py-32">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+      <section className="bg-white py-24 md:py-32">
+        <div className="mx-auto grid max-w-[1500px] px-6 sm:px-8 lg:px-12 grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <motion.div {...reveal()}>
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-brand-green">
               Where We Work
@@ -206,8 +206,8 @@ export default function About() {
       </section>
 
       {/* Turnover stat band */}
-      <section className="bg-brand-green px-5 py-20 sm:px-8 md:px-12 md:py-24">
-        <div className="mx-auto max-w-7xl">
+      <section className="bg-brand-green py-20 md:py-24">
+        <div className="mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-2 gap-y-10 md:grid-cols-4">
             {stats.map((stat, i) => (
               <motion.div key={stat.label} {...reveal(i * 0.08)} className="text-center">
@@ -229,8 +229,8 @@ export default function About() {
       </section>
 
       {/* Team / contacts */}
-      <section className="bg-white px-5 py-24 sm:px-8 md:px-12 md:py-32">
-        <div className="mx-auto max-w-7xl">
+      <section className="bg-white py-24 md:py-32">
+        <div className="mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12">
           <div className="max-w-2xl">
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-brand-green">
               The People

@@ -6,8 +6,8 @@ import { company, navLinks } from '../data/team'
 // Shared footer — logo, quick links, contact block, coverage line. Used by every page.
 export default function Footer() {
   return (
-    <footer className="bg-black px-5 py-16 text-white sm:px-8 md:px-12">
-      <div className="mx-auto max-w-7xl">
+    <footer className="bg-black py-16 text-white">
+      <div className="mx-auto max-w-[1500px] px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           {/* Brand + coverage */}
           <div>

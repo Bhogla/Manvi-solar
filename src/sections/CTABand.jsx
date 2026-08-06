@@ -4,8 +4,8 @@ import { company } from '../data/team'
 // "Book a Consultation" CTA band with phone + email.
 export default function CTABand() {
   return (
-    <section id="contact" className="bg-brand-green px-5 py-24 sm:px-8 md:px-12 md:py-32">
-      <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-12 lg:flex-row lg:items-center">
+    <section id="contact" className="bg-brand-green py-24 md:py-32">
+      <div className="mx-auto flex max-w-[1500px] px-6 sm:px-8 lg:px-12 flex-col items-start justify-between gap-12 lg:flex-row lg:items-center">
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/70">
             Go Solar With Maanvi
