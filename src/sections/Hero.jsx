@@ -5,7 +5,7 @@ import Nav from '../components/Nav'
 const EASE = [0.22, 1, 0.36, 1]
 
 // Editorial light hero modelled on the Verdro reference, adapted to solar.
-// hero-centerpiece.png (transparent floating solar island) is the focal visual.
+// hero-centerpiece.webp (transparent floating solar island) is the focal visual.
 export default function Hero() {
   const reduce = useReducedMotion()
 
@@ -88,8 +88,10 @@ export default function Hero() {
                 initial={reduce ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.94 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, ease: EASE }}
-                src="/hero-centerpiece.png"
+                src="/hero-centerpiece.webp"
                 alt="Floating solar island — rooftop-scale panels set in a landscaped micro-terrain"
+                width={1200}
+                height={960}
                 className="relative mx-auto w-full max-w-[680px] drop-shadow-[0_36px_50px_rgba(0,0,0,0.22)] lg:max-w-none lg:scale-[1.06] lg:origin-center"
               />
             </motion.div>
@@ -205,8 +207,10 @@ export default function Hero() {
               className="pointer-events-none absolute -bottom-1 right-0 z-10 hidden w-[clamp(200px,17vw,300px)] xl:block"
             >
               <motion.img
-                src="/hero-side.png"
+                src="/hero-side.webp"
                 alt=""
+                width={1200}
+                height={960}
                 animate={reduce ? {} : { y: [0, -9, 0] }}
                 transition={
                   reduce

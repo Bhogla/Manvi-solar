@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 import { Radio } from 'lucide-react'
 
 const EASE = [0.22, 1, 0.36, 1]
-const VIDEO_URL = '/hero.mp4'
 
 const tags = ['Rooftop Solar', 'Commercial', 'AMC & Service']
 
@@ -17,8 +16,23 @@ const stats = [
 // outline tags + stat row on the left, a rounded landscape media card on the right.
 export default function BenefitsBlock() {
   const videoRef = useRef(null)
+  // The LIVE INSTALL video sits below the fold. With preload="none" it fetches
+  // nothing on initial load; we only kick off playback once it scrolls near the
+  // viewport, so it never competes with the above-the-fold hero.
   useEffect(() => {
-    videoRef.current?.play().catch(() => {})
+    const el = videoRef.current
+    if (!el) return
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          el.play().catch(() => {})
+          io.disconnect()
+        }
+      },
+      { rootMargin: '200px' },
+    )
+    io.observe(el)
+    return () => io.disconnect()
   }, [])
 
   return (
@@ -104,12 +118,16 @@ export default function BenefitsBlock() {
             <video
               ref={videoRef}
               className="aspect-[4/3] w-full scale-105 object-contain p-3 sm:aspect-[16/10] sm:translate-y-[7%]"
-              src={VIDEO_URL}
               autoPlay
               loop
               muted
               playsInline
-            />
+              poster="/hero-poster.webp"
+              preload="none"
+            >
+              <source src="/hero.webm" type="video/webm" />
+              <source src="/hero.mp4" type="video/mp4" />
+            </video>
             <div className="pointer-events-none absolute inset-0 rounded-[14px] shadow-[inset_0_0_60px_rgba(0,0,0,0.12)]" />
 
             {/* Floating label pill */}
